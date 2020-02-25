@@ -1,5 +1,5 @@
 # Queue Management System
-(Functional prototype of queue management system written in C# .Net Core 2.0)
+(Functional prototype of queue management system written in C# .Net Core 2.0)  
 2016/17 project - requires library updates
 
 ## Emergency-Department-Check-In
