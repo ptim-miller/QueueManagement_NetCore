@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Check-in Confirmation";
+}
+
+<h2>Check-in Confirmation</h2>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div class="form-group">
+                <h3>Your Patient ID is: @ViewBag.Patient_ID</h3><br />
+                <h4>@ViewBag.Notified</h4><br />
+                <h4>Thank you for checking in. Please make sure that your smartphone is properly charged as you will being receiving communications regarding your visit today.</h4><br />
+                <h4>You will be notified when your doctor is available.</h4>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=Start class="btn btn-success btn-sm">Done</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

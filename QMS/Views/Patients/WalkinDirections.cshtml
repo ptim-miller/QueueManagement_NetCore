@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Walk-in Center Directions";
+}
+
+<h2>Directions to the Walk-In Center</h2>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div class="form-group">
+                <h4>
+                    If you wish to continue emergency room checkin and not go to the Walk-In Center, select Back to return.
+                </h4>
+                <h3>
+                    The Walkin Center is located......
+                </h3>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=Walkin class="btn btn-success btn-sm">Back</a>
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

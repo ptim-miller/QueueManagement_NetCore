@@ -1,0 +1,190 @@
+﻿@model QMS.Models.Encounter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container-fluid">
+    <h4>Patient Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.FHIR_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.patient.FHIR_id)
+        </dd>
+        <dt>
+            @Html.DisplayName("Name")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.firstname)
+            @Html.DisplayFor(model => model.patient.lastname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.birthDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.birthDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.start)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.start)
+        </dd>
+        @if (Model.end != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.end)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.end)
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.telecom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.telecom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.line1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.line1)
+            @Html.DisplayFor(model => model.patient.line2)
+        </dd>
+        <dt>
+            @Html.DisplayName("City, State Zip")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.city)
+            @Html.DisplayFor(model => model.patient.state)
+            @Html.DisplayFor(model => model.patient.postalCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.preferredGender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.preferredGender)
+        </dd>
+        <dt>
+            @Html.DisplayName("Pregnant")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.IsPregnant)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Primary Physician")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.primaryPhysician)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.provider)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.provider)
+        </dd>
+        <dt>
+            @Html.DisplayName("Primary Insured?")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.primary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.primaryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.primaryName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.patient.policy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.policy)
+        </dd>
+        <dt>
+            @Html.DisplayName("Primary complaint")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.complaint)
+        </dd>
+        <dt>
+            @Html.DisplayName("Recent travel")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.travel)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("HIV test requested")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.HIVtest)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Vaccinations current")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.vaccines, new { htmlAttributes = new { @class = "check-control" } })
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Abused")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.abused)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("HIV Test Requested")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.patient.HIVtest)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Has primary physician")
+        </dt>
+        <dd class="check-control">
+            @Html.DisplayFor(model => model.patient.primaryPhysician, new { htmlAttributes = new { @class = "check-control" } })
+        </dd>
+    </dl>
+    <div class="col-md-4">
+        @if (Model.end != null)
+            {
+            @Html.ActionLink("Create New Visit", "CreateIdentity", "Patients", new { newPatient = false }, new { @class = "btn btn-success pull-right" })
+        }
+    </div>
+
+</div>
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+</div>

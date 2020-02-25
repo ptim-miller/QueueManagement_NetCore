@@ -1,0 +1,71 @@
+﻿@{
+    var searchVals = (QMS.Models.EncounterSearch)TempData["CurrentPage"];
+}
+
+<div class="container-fluid">
+    <div class="col-md-10">
+        <h3><b>@ViewBag.Title </b></h3>
+        <div class="col-md-5">
+            <div class="row ">
+                <div class="col-sm-3">
+                    @Html.Label("Last:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("last", searchVals.last, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    @Html.Label("First:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("first", searchVals.first, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-3">
+                    @Html.Label("Email:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("email", searchVals.email, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row ">
+                <div class="col-sm-3">
+                    @Html.Label("DOB:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("DOB", searchVals.DOB, new { htmlAttributes = new { @class = "date-picker form-control", @type = "text" } })
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-3">
+                    @Html.Label("From:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("start", searchVals.start.ToString(), new { htmlAttributes = new { @class = "date-picker form-control", @type = "text" } })
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-3">
+                    @Html.Label("To:")
+                </div>
+                <div class="col-sm-6">
+                    @Html.Editor("end", searchVals.end.ToString(), new { htmlAttributes = new { @class = "date-picker form-control", @type = "text" } })
+                </div>
+            </div>
+            <br />
+            <div class="row ">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <a asp-action=Search class="btn btn-success">Clear</a>
+                        <input type="submit" value="Search" class="btn btn-success pull-right" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

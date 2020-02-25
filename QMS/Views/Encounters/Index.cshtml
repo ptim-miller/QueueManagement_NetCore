@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Encounter>
+@{
+    ViewBag.Title = "Patient List";
+}
+
+<form method="post">
+    <div class="container-fluid">
+        @await Html.PartialAsync("_ListEncountersPartial", Model)
+    </div>
+</form>

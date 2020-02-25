@@ -1,0 +1,64 @@
+﻿@model IdentityView
+@{
+    ViewBag.Title = "Identifying Information";
+}
+
+<h2>Please enter your identifying information</h2>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="lastname"></label>
+                <input asp-for="lastname" class="form-control" />
+                <span asp-validation-for="lastname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="firstname"></label>
+                <input asp-for="firstname" class="form-control" />
+                <span asp-validation-for="firstname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="birthDate"></label>
+                <input asp-for="birthDate" class="date-picker form-control" />
+                <span asp-validation-for="birthDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="gender"></label>
+                <div class="col-md-10">
+                    <select asp-for="gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                        <option selected="selected" value="">Please select</option>
+                    </select>
+                    <span asp-validation-for="gender" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="preferredGender"></label>
+                <div class="col-md-10">
+                    <select asp-for="preferredGender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                        <option selected="selected" value="">Please select</option>
+                    </select>
+                    <span asp-validation-for="preferredGender" class="text-danger"></span>
+                </div>
+            </div>
+
+            <hr />
+            <button type="submit" class="btn btn-success btn-lg">Next</button>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

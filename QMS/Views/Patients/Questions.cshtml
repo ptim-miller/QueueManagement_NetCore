@@ -1,0 +1,56 @@
+﻿@model QuestionsView
+@{
+    ViewBag.Title = "Additional Questions";
+}
+<h2>Please answer the following questions</h2>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post" >
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="travel"></label>
+                <input asp-for="travel" class="form-control" />
+                <span asp-validation-for="travel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HIVtest"></label>
+                <input asp-for="HIVtest" class="form-control" />
+                <span asp-validation-for="HIVtest" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="vaccines"></label>
+                <input asp-for="vaccines" class="form-control" />
+                <span asp-validation-for="vaccines" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="abused"></label>
+                <input asp-for="abused" class="form-control" />
+                <span asp-validation-for="abused" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="primaryPhysician"></label>
+                <input asp-for="primaryPhysician" class="form-control" />
+                <span asp-validation-for="primaryPhysician" class="text-danger"></span>
+            </div>
+
+            <hr />
+            <button type="submit" class="btn btn-success btn-lg">Complete Check-in</button>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=Insurance asp-route-newPatient=false class="btn btn-success btn-sm">Back</a>
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Encounter>
+
+@{
+    Layout = "_LayoutScreen";
+    ViewBag.Title = "Waiting List";
+}
+
+@if (Model != null)
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th class="th">
+                    @Html.DisplayNameFor(model => model.patient.FHIR_id)
+                </th>
+                <th class="th-display">
+                    @Html.Label("Status")
+                </th>
+                <th class="th-display">
+                    @Html.Label("Minutes")
+                </th>
+                <th class="th-display">
+                    @Html.DisplayNameFor(model => model.start)
+                </th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.end == null)
+                {
+                    <tr>
+                        <td class="td--display">
+                            @Html.DisplayFor(modelItem => item.patient.FHIR_id)
+                        </td>
+                        <td class="td--display">
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                        <td class="td--display">
+                            @Convert.ToInt32(DateTime.Now.Subtract(item.start).TotalMinutes)
+                        </td>
+                        <td class="td--display">
+                            @Html.DisplayFor(modelItem => item.start)
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+}
+
+

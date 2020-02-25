@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Pregnancy Status";
+}
+
+<h2>Are you pregnant?</h2>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div class="form-group">
+                <a asp-action=PregnancyInfo class="btn btn-success btn-sm">Yes</a>
+                <a asp-action=Contact class="btn btn-success btn-sm">No</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=CreateIdentity class="btn btn-success btn-sm">Back</a>
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

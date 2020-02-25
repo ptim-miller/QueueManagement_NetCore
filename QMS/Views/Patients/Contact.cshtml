@@ -1,0 +1,68 @@
+﻿@model AddressView
+@{
+    ViewBag.Title = "Contact Information";
+}
+
+<h4>Please enter your contact information</h4>
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="line1"></label>
+                <input asp-for="line1" class="form-control" />
+                <span asp-validation-for="line1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="line2"></label>
+                <input asp-for="line2" class="form-control" />
+                <span asp-validation-for="line2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="city"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="state"></label>
+                @Html.DropDownList("state", (IEnumerable<SelectListItem>)ViewData["StatesList"], "-- Select One --", new { @class = "form-control" })
+                <span asp-validation-for="state" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="postalCode"></label>
+                <input asp-for="postalCode" class="form-control" />
+                <span asp-validation-for="postalCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="email"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="telecom"></label>
+                <input asp-for="telecom" class="form-control" />
+                <span asp-validation-for="telecom" class="text-danger"></span>
+            </div>
+            
+            <hr />
+            <button type="submit" class="btn btn-success btn-lg">Next</button>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=CreateIdentity asp-route-newPatient=false class="btn btn-success btn-sm">Back</a>
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

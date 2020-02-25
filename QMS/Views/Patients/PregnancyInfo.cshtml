@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Pregnancy Instructions";
+}
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div class="form-group">
+                <h3>
+                    Patients who are pregnant should be seen at Obstetrics and Gynecology.
+                    Please report to the registration desk to be transferred.
+                </h3>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<a asp-action=PregnancyStatus class="btn btn-success btn-sm">Back</a>
+<a asp-action=Start class="btn btn-success btn-sm">Reset</a>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,35 @@
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Smith",
+      "given": [
+        "John"
+      ],
+      "prefix": [
+        "Mr."
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "615-555-1212",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1980-01-01",
+  "address": [
+    {
+      "line": [
+        "123 Main St",
+      ],
+      "city": "Smith",
+      "state": "TN",
+      "postalCode": "37919",
+      "country": "US"
+    }
+  ]
+}
