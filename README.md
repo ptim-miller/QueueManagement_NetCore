@@ -7,7 +7,7 @@ Emergency Dept Kiosk Application with Admin Station
 
 ## Technical  
 C#/.Net Core 2.0  
-PostgreSQL 9.6 (backup in Data)  
+PostgreSQL 9.6 (database not provided public) 
  
 **Required**  
 FHIR API (setup in appsettings.json)  
